@@ -1,0 +1,14 @@
+By adding href="#home" to a link, you’re saying, “When someone clicks this link, take them to the section with the ID ‘home’ on this very page.”
+
+You can also use href="#top" to create a “Back to Top” link.
+
+overflow-x: hidden;: Ah, the scroll-hiding cloak! This rule hides horizontal scrollbars if the content within the <html> element overflows horizontally. No more pesky side-scrolling.
+
+vh (viewport height) ensures responsiveness. No matter how tall the screen is, the section adapts.
+rem (root em) is relative to the root font size. It’s great for consistent spacing.
+% (percentage) adapts to the section’s width. It’s like saying, “Hey, padding, be proportional!”
+
+
+<script defer src="script.js" ></script>  //here defer will make it run only after the html component is present.so, basically you can just 
+use it just after linking the stylesheet
+
