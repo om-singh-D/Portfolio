@@ -38,6 +38,20 @@ export function FloatingNav() {
     }
   }
 
+  const handleResumeDownload = () => {
+    const link = document.createElement('a')
+    link.href = '/Om_Singh_Resume.pdf'
+    link.download = 'Om_Singh_Resume.pdf'
+    link.target = '_blank'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    
+    if (isMobile) {
+      setIsOpen(false)
+    }
+  }
+
   return (
     <>
       <motion.div
@@ -83,6 +97,7 @@ export function FloatingNav() {
               <Button
                 size="sm"
                 className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+                onClick={handleResumeDownload}
               >
                 Resume
               </Button>
@@ -110,7 +125,10 @@ export function FloatingNav() {
                 {item.name}
               </Link>
             ))}
-            <Button className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0">
+            <Button 
+              className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+              onClick={handleResumeDownload}
+            >
               Resume
             </Button>
           </div>
