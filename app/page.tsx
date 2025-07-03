@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
 
@@ -14,6 +16,16 @@ import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 
 export default function Portfolio() {
+  const handleResumeDownload = () => {
+    const link = document.createElement('a')
+    link.href = '/Om_Singh_Resume.pdf'
+    link.download = 'Om_Singh_Resume.pdf'
+    link.target = '_blank'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
       <MouseFollower />
@@ -181,7 +193,12 @@ export default function Portfolio() {
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume</Button>
+                  <Button 
+                    className="bg-zinc-800 hover:bg-zinc-700 text-white"
+                    onClick={handleResumeDownload}
+                  >
+                    Download Resume
+                  </Button>
                 </div>
               </GlassmorphicCard>
             </div>
